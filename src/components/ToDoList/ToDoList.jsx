@@ -15,11 +15,8 @@ const ToDoList = () => {
             };
 
             setItems(items.concat(newItem))
-
-            setInputValue('')
         }
-
-        console.log(items);
+        setInputValue('')
     }
 
     const deleteItem = (key) => {
@@ -34,8 +31,11 @@ const ToDoList = () => {
         <div className="todoListMain-header">
           <form onSubmit={e => addItem(e)}>
             <input
-              onChange={e => setInputValue(e.target.value)}
-              placeholder="Enter a task"
+                autoFocus
+                className="todoListMain-input"
+                onChange={e => setInputValue(e.target.value)}
+                placeholder="Enter a task"
+                value={inputValue}
             />
             <button type="submit">Add</button>
           </form>
